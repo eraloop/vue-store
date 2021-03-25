@@ -6,6 +6,6 @@ this repo contains code for a fictional vue store, the project is still incomple
  
  to setup this project locally . perform to following actions.
  
- git clone xxxxx.
- npm install 
- npm run dev 
+ #git clone xxxxx.
+ #npm install 
+ #npm run dev 
