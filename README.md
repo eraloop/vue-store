@@ -1,11 +1,18 @@
 # vue-store
 
-this repo contains code for a fictional vue store, the project is still incomplete and in progress, 
+> A Vue.js project
 
-#to setup dependencies
- 
- to setup this project locally . perform to following actions.
- 
- git clone xxxxx.
- npm install 
- npm run dev 
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+```
+
+For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
