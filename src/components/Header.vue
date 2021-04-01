@@ -1,13 +1,13 @@
 <template>
   <div id="header">
-     <div class="container center">
+     <div class="navbar center">
         <h1>Vue store</h1>
         <nav>
             <ul>
-                    <li><router-link to="/" class="link">Home</router-link></li>
-                    <li><router-link to="/auction" class="link">Auctions</router-link></li>
-                    <li><router-link to="/contact" class="link">Contact</router-link></li>
-                    <button class="btn-h">Register</button>
+                <li><router-link to="/home" class="link">Home</router-link></li>
+                <li><router-link to="/auction" class="link">Auctions</router-link></li>
+                <li><router-link to="/contact" class="link">Contact</router-link></li>
+                <button class="btn-h" @click.prevent="route()">Register</button>
             </ul>
         </nav>
      </div>
@@ -21,6 +21,11 @@ export default {
     return {
      
     }
+  },
+  methods:{
+    route(){
+      this.$router.push("/register")
+    }
   }
 }
 </script>
@@ -29,19 +34,25 @@ export default {
 
 #header{
     background:#1849D6;
-    height: 50px;
     width: 100%;
     padding: 10px 0;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 99;
 }
 
-.container{
+.navbar{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
 }
-.container ul li{
+
+.navbar ul li{
     display: inline-block;
     padding: 0 10px;
     cursor: pointer;
@@ -54,7 +65,7 @@ export default {
   color: #47f3a3;
 }
 
-.container h1{
+.navbar h1{
     font-size: 1.2em;
     color: #47f3a3;
 }

@@ -2,6 +2,7 @@
   <div id="main-view">
       <app-header></app-header>
       <router-view></router-view>
+      
       <app-footer></app-footer>
   </div>
 </template>
@@ -17,6 +18,7 @@ import singleProduct from "./singleProduct"
 
 
 
+
 export default {
     components:{
 
@@ -26,8 +28,8 @@ export default {
         "app-auction":Auction,
         "app-contact-page":Contact,
         "app-checkout": Checkout,
-        "app-product": singleProduct
-
+        "app-product": singleProduct,
+        
     },
 
   data () {

@@ -1,7 +1,9 @@
 <template>
   <div id="footer">
 
-      <p>&copy; vue store 2021. All Rights Reserved</p>
+    <section class="footer-company">
+        <p>&copy; vue store 2021. All Rights Reserved</p>
+    </section>
    
   </div>
 </template>
@@ -21,17 +23,26 @@ export default {
 
 #footer{
     background:#1849D6;
-    height: 100px;
+    height: auto;
     width: 100%;
-    padding: 1em 2em;
+    /* padding: 1em 2em; */
     color: white;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 #footer p{
   font-size: 20px;
+}
+
+.footer-company{
+  padding: 2em 0 ;
+  border-top: 3px solid #092a8b;
+  width: 100%;
+  margin: auto;
+  text-align: center;
 }
 
 

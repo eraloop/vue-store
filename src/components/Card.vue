@@ -1,7 +1,9 @@
 <template>
   <div id="card">
-    <span class="count">{{cardItems.cardLength}}</span>
-   <router-link to="/checkout"> <button class="cardbutton float">C</button></router-link>
+    <div v-if="cardItems.cardLength != 0">
+        <span class="count">{{cardItems.cardLength}}</span>
+        <router-link to="/checkout"> <button class="cardbutton float">C</button></router-link>
+    </div>
   </div>
 </template>
 
@@ -22,8 +24,8 @@ export default {
 <style scoped>
 #card{
     position: fixed;
-    bottom: 200px;
-    right: 20px;
+    bottom: 300px;
+    right: 30px;
 }
 button {
     font-size: 30px;

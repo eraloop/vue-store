@@ -1,14 +1,16 @@
 import Home from './components/Home.vue'
 import Auction from './components/Auction.vue'
 import Contact from './components/Contact.vue'
-import Checkout from './components/Checkout.vue'
+import Checkout from './components/CheckoutView.vue'
 import singleProduct from './components/singleProduct.vue'
+import Login from './components/Login.vue'
+import Register from './components/Register.vue'
 
 export default  [ 
     {  
-        name: "home",
+        name: "login",
         path: "/",
-        component: Home
+        component: Login
     },
     {
         path: "/auction",
@@ -29,6 +31,16 @@ export default  [
         path: "/checkout",
         name: "checkout",
         component: Checkout
+    },
+    {
+        path: "/home",
+        name: "home",
+        component: Home
+    },
+    {
+        path: "/register",
+        name: "register",
+        component: Register
     },
     {
         path: "*",

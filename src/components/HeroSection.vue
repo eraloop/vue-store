@@ -29,7 +29,7 @@ export default {
 
 #hero-section{
     background:#1849D6;
-    height: 450px;
+    height: 500px;
     width: 100%;
     display: flex;
     align-items: center;

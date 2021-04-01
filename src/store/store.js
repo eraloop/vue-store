@@ -319,22 +319,50 @@ export const store = new Vuex.Store({
         
         cardItems: state =>{
             const cardItems = state.Card;
-            const cardLength = state.Card.forEach(item=>{
-              
-            });
+            const cardLength = state.Card.length;
+
+            // const cardCost =  state.Card.forEach(item =>{
+
+            //         console.log("card calculated")
+            //         // let total = 0
+            //         // // total += item.product.price * item.quantity
+            //         // console.log(total)
+            //         return 0
+   
+            // })
+            const cardCost = state.Card.forEach(item=>{
+                let total = 0
+                // console.log(item.product.price)
+                console.log(item.product.price * item.quantity)
+                total += item.product.price * item.quantity
+                console.log("total", total)
+                return total
+            })
            
 
-            return { cardItems, cardLength }
+            return { cardItems, cardLength, cardCost }
         }
         
     },
 
     mutations: {
         Add_To_Card: (state , {product, quantity})=>{
-            state.Card.push({
-                product,
-                quantity
+
+            let productInCard = state.Card.find(item=>{
+                return item.product.name === product.name
             })
+
+            if(productInCard){
+                productInCard.quantity += quantity
+            }else{
+
+                state.Card.push({
+                    product,
+                    quantity
+                })
+            }
+
+          
         }
 
     },

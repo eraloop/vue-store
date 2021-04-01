@@ -36,18 +36,18 @@ export default {
 .container{
     display: flex;
     flex-direction: row;
-    padding: 1em 0;
+    padding: 10px 0;
 }
 
 ul li{
     display: inline-block;
-    padding: 0 1em;
+    padding: 0 1.7em;
     opacity: 0.2;
 }
 ul li img{
 
-    height: 40px;
-    width: 100px;
+    height: 30px;
+    width: 70px;
 }
 
 </style>

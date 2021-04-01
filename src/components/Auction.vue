@@ -31,7 +31,7 @@
                   <p class="price">${{ product.price }}</p>
                 </section>
                 <section class="card">
-                  <button>+</button>
+                  <button @click="addToCard(product)" class="cardbutton">+</button>
                 </section>
               </section>
             </div>
@@ -68,7 +68,7 @@
                   <p class="price">${{ product.price }}</p>
                 </section>
                 <section class="card">
-                  <button>+</button>
+                  <button @click="addToCard(product)" class="cardbutton" >+</button>
                 </section>
               </section>
             </div>
@@ -105,7 +105,7 @@
                   <p class="price">${{ product.price }}</p>
                 </section>
                 <section class="card">
-                  <button>+</button>
+                  <button @click="addToCard(product)" class="cardbutton">+</button>
                 </section>
               </section>
             </div>
@@ -113,17 +113,33 @@
         </div>
       </div>
     </div>
+
+    <app-footer-links></app-footer-links>
   </div>
 </template>
 
 <script>
+import FooterLinks from './FooterLinks'
+
 import { mapGetters } from "vuex";
 export default {
+  components:{
+    "app-footer-links": FooterLinks
+  },
+  
   data() {
     return {};
   },
   computed: {
     ...mapGetters(["auctionSales"]),
+  },
+  methods:{
+    addToCard(product){
+      this.$store.dispatch('addToCard',{
+        product: product,
+        quantity : 1
+      })
+    }
   },
 };
 </script>
