@@ -2,14 +2,14 @@
     <div class="footer-links">
     <section class="footer-content">
       <div class="logo">
-        <img src="../assets/logo.png" alt="vue logo img">
+          <img src="../assets/logo.png" alt="vue logo img">
+
       </div >
      <div class="links">
         <div class="resources">
         <h4>Store</h4>
         <ul>
           <li>Mumbai</li>
-          <li>Dubai</li>
           <li>New york</li>
           <li>Miami</li>
         </ul>
@@ -41,19 +41,14 @@
           <li>Retailers</li>
         </ul>
       </div>
-       <div class="">
-        <h4>Resources</h4>
-        <ul>
-          <li>Sellers</li>
-          <li>Buyers</li>
-          <li>wholesalers</li>
-          <li>Retailers</li>
-        </ul>
-      </div>
       <div class="social-links">
          <h4>Social</h4>
         <ul>
-          <li><img src="../assets/icons/facebook-brands.svg" /></li>
+          <li>
+            <a target="blank" href="www.facebook.com">
+            <img src="../assets/icons/facebook-brands.svg" />
+            </a>
+            </li>
           <li><img src="../assets/icons/instagram-brands.svg" /></li>
           <li><img src="../assets/icons/twitter-brands.svg" /></li>
           <li><img src="../assets/icons/pinterest-square-brands.svg" /></li>
@@ -98,7 +93,7 @@ h4{
     max-width: 85%;
     margin: auto;
     justify-content: space-between;
-    padding: 2em 0;
+    padding: 1.5em 0;
 
 }
 .links{

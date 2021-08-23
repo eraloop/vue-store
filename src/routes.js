@@ -5,9 +5,10 @@ import Checkout from './components/CheckoutView.vue'
 import singleProduct from './components/singleProduct.vue'
 import Login from './components/Login.vue'
 import Register from './components/Register.vue'
+import Form from './components/FormFields.vue'
 
-export default  [ 
-    {  
+export default  [
+    {
         name: "login",
         path: "/",
         component: Login
@@ -23,7 +24,7 @@ export default  [
         component: Contact
     },
     {
-        path: "/product",
+        path: "/product/:id",
         name: "product",
         component: singleProduct
     },
@@ -41,6 +42,11 @@ export default  [
         path: "/register",
         name: "register",
         component: Register
+    },
+    {
+        path: "/form",
+        name: "form",
+        component: Form
     },
     {
         path: "*",

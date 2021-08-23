@@ -4,87 +4,75 @@
         <h1>Vue store</h1>
         <nav>
             <ul>
-                <li><router-link to="/home" class="link">Home</router-link></li>
-                <li><router-link to="/auction" class="link">Auctions</router-link></li>
-                <li><router-link to="/contact" class="link">Contact</router-link></li>
-                <button class="btn-h" @click.prevent="route()">Register</button>
+                <div v-if="Home">
+                  <li><router-link to="/home" class="link">Home</router-link></li>
+                </div>
+               <div v-if="Auction">
+                  <li><router-link to="/auction" class="link">Auctions</router-link></li>
+               </div>
+               <div v-if="Contact">
+                  <li><router-link to="/contact" class="link">Contact</router-link></li>
+               </div>
+
+              <div  class="horizontal">
+                <div v-if='isLoggedIn'>
+                  <button class="btn-h submit-btn" @click.prevent='routing_nav("Logout")'>{{Logout}}</button>
+                </div>
+                <div else>
+                  <button class="btn-h submit-btn" @click.prevent='routing_nav("Login")'>{{Login}}</button>
+                  <button class="btn-h submit-btn" @click.prevent='routing_nav("Register")'>{{Register}}</button>
+                </div>
+              </div>
             </ul>
         </nav>
      </div>
-   
+
   </div>
 </template>
 
 <script>
 export default {
+  props:{
+    Home: Boolean,
+    Auction: Boolean,
+    Contact: Boolean,
+    Login: String,
+    Register: String,
+    Logout: String,
+    routing: Function,
+  },
   data () {
     return {
-     
+      isLoggedIn: false,
+      isregistered: false,
     }
   },
   methods:{
-    route(){
-      this.$router.push("/register")
-    }
+    routing_nav(value){
+      if(this.Login == value ){
+         if(!(this.$route.path == '/')){
+            this.$router.push("/")
+         }
+      }else if(this.Lougout == value){
+         if(!(this.$route.path == '/logout')){
+           console.log("logged out boy")
+            // this.$router.push("/logout")
+          }
+      }else if(this.Register == value){
+        if(!(this.$route.path == '/register')){
+          this.$router.push("/register")
+        }
+      }
+    },
+    fetch
+  },
+  mounted:{
+
   }
 }
 </script>
 
 <style scoped>
-
-#header{
-    background:#1849D6;
-    width: 100%;
-    padding: 10px 0;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    z-index: 99;
-}
-
-.navbar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center; 
-}
-
-.navbar ul li{
-    display: inline-block;
-    padding: 0 10px;
-    cursor: pointer;
-}
-.link{
-  text-decoration: none;
-  color: #fff;
-}
-.link:hover{
-  color: #47f3a3;
-}
-
-.navbar h1{
-    font-size: 1.2em;
-    color: #47f3a3;
-}
-
-.btn-h{
-  padding: 10px;
-  color:white;
-  border: 0;
-  border-radius: 25px;
-  background: #1DBF73;
-  margin-left: 2em;
-  outline: 0;
-  cursor: pointer;
-}
-
-.btn-h:hover{
-  background: #47f3a3;
-  transition: .2s ease-in-out;
-}
 
 
 </style>

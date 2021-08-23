@@ -11,7 +11,7 @@
 export default {
   data () {
     return {
-     
+
     }
   }
 }
@@ -23,7 +23,7 @@ export default {
         background:#092a8f;
         height: auto;
         width: 100%;
-        padding:2em;
+        padding:1em 2em;
         margin-top: 2em;
         color: white;
         display: flex;

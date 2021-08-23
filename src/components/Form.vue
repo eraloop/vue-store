@@ -1,11 +1,12 @@
 <template>
   <div id="form" class="container">
     <form action="">
-          <div>
+
+          <div v-if="name">
             <label for="name">Name</label><br />
-            <input 
-            type="text" 
-            name="name" 
+            <input
+            type="text"
+            name="name"
             required
             v-model="form.name"
              />
@@ -37,6 +38,9 @@
 
 <script>
 export default {
+  props:{
+    Name: Boolean,
+  },
   data () {
     return {
         isTrue: false,
@@ -51,7 +55,7 @@ export default {
     submitbtn(){
         console.log(this.form)
         this.form= ""
-        this.submittext = "submitted.."    
+        this.submittext = "submitted.."
     }
   }
 }

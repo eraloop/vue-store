@@ -1,5 +1,9 @@
 <template>
   <div id="auction">
+    <app-navbar
+      Login="Login" Register="Register" Logout = "Logout" routing_nav
+      :Home = true :Contact= true
+      ></app-navbar>
     <h1>Auction page</h1>
     <div class="products">
       <div class="femaleProducts">
@@ -119,14 +123,16 @@
 </template>
 
 <script>
+import Header from "./Header"
 import FooterLinks from './FooterLinks'
 
 import { mapGetters } from "vuex";
 export default {
   components:{
-    "app-footer-links": FooterLinks
+    "app-footer-links": FooterLinks,
+    "app-navbar":Header,
   },
-  
+
   data() {
     return {};
   },

@@ -1,66 +1,30 @@
 <template>
-
-    <div id="login" class="log-container form-container-size">
-      <section class="header">
-        <h1>Login</h1>
-        <h3>Don't have an account?. <button @click.prevent="route_reg()" class="link-btn">Register</button></h3>
-      </section>
-      <section class="form-section">
-        <form action="">
-
-          <div >
-            <label for="email">Email</label><br />
-            <input
-              type="text"
-              name="email"
-              required
-              :rules="NameRules"
-              v-model="form.email"
-            />
-          </div>
-          <div>
-            <label for="card">Password</label><br />
-            <input
-              type="password"
-              name="password"
-              required
-            
-              v-model="form.password"
-            />
-          </div>
-          <div>
-            <input @click.prevent="route()"  class="submit-btn" type="submit" value="Login">
-          </div>
-        </form>
-      </section>
-  </div>
+  <main>
+    <app-navbar Login="Login" Register="Register" Logout = "Logout" routing_nav></app-navbar>
+    <app-form Text="Login" :Email="true" :Password ="true"  linkText="Register" routing></app-form>
+  </main>
 </template>
 
 <script>
-import Form from './Form'
+import Form from './FormFields'
+import Navbar from './Header'
 export default {
     components:{
-        "app-form": Form
+        "app-form": Form,
+        "app-navbar": Navbar,
     },
 
   data () {
     return {
      form:{
-            email: "",
-            password:""
+        email: "",
+        password:""
       },
-      
+
     }
   },
 
   methods:{
-    route(){
-      this.$router.push("/home")
-    },
-    route_reg(){
-      this.$router.push("/register")
-    },
-
   },
 }
 </script>
@@ -89,4 +53,3 @@ export default {
 }
 
 </style>
-

@@ -6,6 +6,9 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
+        isLoggedIn: false,
+        isRegistered: false,
+        currentUser:{},
         generalProducts: [
             {
                 name: "HODDY",
@@ -34,8 +37,8 @@ export const store = new Vuex.Store({
                 image: require('../assets/products/pullover.jpg'),
                 description: `
                     this product is a very quality vue product
-                    
-        
+
+
                 `
             },
             {
@@ -53,8 +56,8 @@ export const store = new Vuex.Store({
                 image: require('../assets/products/singlets.jpg'),
                 description: `
                     this product is a very quality vue product
-                   
-        
+
+
                 `
             },
 
@@ -114,8 +117,8 @@ export const store = new Vuex.Store({
                 image: require('../assets/products/lacoste.jpg'),
                 description: `
                     this product is a very quality vue product
-                   
-    
+
+
                 `
             },
             {
@@ -126,8 +129,8 @@ export const store = new Vuex.Store({
                 image: require('../assets/products/jeanjackets.jpg'),
                 description: `
                     this product is a very quality vue product
-                    
-   
+
+
                 `
             },
             {
@@ -149,7 +152,7 @@ export const store = new Vuex.Store({
                 image: require('../assets/products/shoe.jpg'),
                 description: `
                     this product is a very quality vue product
-                    
+
 
                 `
             },
@@ -161,8 +164,8 @@ export const store = new Vuex.Store({
                 image: require('../assets/products/suitcase.jpg'),
                 description: `
                     this product is a very quality vue product
-                    
-    
+
+
                 `
             },
             {
@@ -173,7 +176,7 @@ export const store = new Vuex.Store({
                 image: require('../assets/products/wtch.jpg'),
                 description: `
                     this product is a very quality vue product
-                    
+
 
                 `
             },
@@ -220,7 +223,7 @@ export const store = new Vuex.Store({
                 image: require('../assets/partners/client-8.png')
             },
         ],
-        
+
         Card: [],
 
     },
@@ -316,7 +319,7 @@ export const store = new Vuex.Store({
 
             return featuredProducts;
         },
-        
+
         cardItems: state =>{
             const cardItems = state.Card;
             const cardLength = state.Card.length;
@@ -328,7 +331,7 @@ export const store = new Vuex.Store({
             //         // // total += item.product.price * item.quantity
             //         // console.log(total)
             //         return 0
-   
+
             // })
             const cardCost = state.Card.forEach(item=>{
                 let total = 0
@@ -338,11 +341,11 @@ export const store = new Vuex.Store({
                 console.log("total", total)
                 return total
             })
-           
+
 
             return { cardItems, cardLength, cardCost }
         }
-        
+
     },
 
     mutations: {
@@ -355,21 +358,32 @@ export const store = new Vuex.Store({
             if(productInCard){
                 productInCard.quantity += quantity
             }else{
-
                 state.Card.push({
                     product,
                     quantity
                 })
             }
 
-          
-        }
+
+        },
+
+        setRegisteredUser:( state, payload) =>{
+            state.currentUser = payload
+            // commit("setIsRegistered", true)
+        },
+
+        // setIsRegistered:(state, value) =>{
+        //     state.isRegistered = value
+        // }
 
     },
 
     actions: {
         addToCard :({commit}, {product, quantity}) =>{
             commit("Add_To_Card", {product, quantity})
+        },
+        registerUser: ({commit}, payload ) =>{
+            commit("setRegisteredUser",  payload)
         }
 
     }
